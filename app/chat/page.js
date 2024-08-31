@@ -86,7 +86,8 @@ export default function Chat() {
           });
         }
       
-        return message;
+        // return message;
+        return JSON.stringify(placeData)
       }
       
       
@@ -119,7 +120,8 @@ export default function Chat() {
                 addMessage("Chat ended. " + text_content, "bot");
                 if(new_place_req){
                     const formattedMessage = formatPlaceData(new_place_req);
-                    addMessage(formattedMessage, "bot");
+                    addMessage(JSON.stringify(new_place_req), "bot");
+                    // addMessage(formattedMessage, "bot");
                 }
             } else {
                 setCurrentTopic(cur_state);
